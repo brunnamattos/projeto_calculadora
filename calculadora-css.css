@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #303030;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#calculadora {
+    width: 320px;
+    height: 520px;
+    background-color: #4d4d4d;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 1px 1px 10px #111111;
+}
+
+.key-display {
+    height: 100px;
+    text-align: right;
+}
+
+#display {
+    justify-content: center;
+    text-align: right;
+    width: 290px;
+    height: 60px;
+    margin: 20px 20px;
+    padding-top: 20px;
+    font-size: 30px;
+    color: #111111;
+}
+
+.keyboard {
+    height: 400px;
+    
+}
+
+.botao {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    float: left;
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+}
+
+.igual {
+    background-color: #c53d3d;
+    color: #ffffff;
+}
+
+.div {
+    background-color: #4179b9;
+    color: #ffffff;
+}
+
+.mult {
+    background-color: #69ad3b;
+    color: #ffffff;
+}
+
+.menos {
+    background-color: #914dac;
+    color: #ffffff;
+}
+
+.mais {
+    background-color:#c2bf20;
+    color: #ffffff;
+}
+
+.raiz {
+    background-color:#dd9a34;
+    color: #ffffff
+}
+.maismenos {
+    background-color:#acacac;
+    color: #ffffff
+}
+.apagar {
+    background-color:#acacac;
+    color: #ffffff
+}
+
+.limpar {
+    background-color:#acacac;
+    color: #ffffff
+}
+
+.ponto {
+    background-color:#acacac;
+    color: #ffffff
+}

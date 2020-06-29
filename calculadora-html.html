@@ -3,41 +3,46 @@
 <html>
 
 <head>
-    <title>Calculadora</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="calculadora-css.css">
+    <title>Calculadora</title>
 </head>
 
 <body>
-    <form id="calculadora">
-        <!-- <input type="text" id="displayHistorico" value="0"> -->
-        <input type="text" id="display" value="0">
-        <br>
-        <input type="button" class="botao op" value="%" onclick="botao(value)">
-        <input type="button" class="botao op" value="&#8730;" onclick="botaoRaiz(value)"> <!-- raiz -->
-        <input type="button" class="botao limpar" value="C" onclick="resetaTudo()">
-        <input type="button" class="botao op" value="&#247;" onclick="botaoOperacao('/')"> <!-- divisão -->
-        <br>
-        <input type="button" class="botao" value="7" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="8" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="9" onclick="botaoNum(value)">
-        <input type="button" class="botao op" value="x" onclick="botaoOperacao(value)">
-        <br>
-        <input type="button" class="botao" value="4" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="5" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="6" onclick="botaoNum(value)">
-        <input type="button" class="botao op" value="-" onclick="botaoOperacao(value)">
-        <br>
-        <input type="button" class="botao" value="1" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="2" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="3" onclick="botaoNum(value)">
-        <input type="button" class="botao op" value="+" onclick="botaoOperacao(value)">
-        <br>
-        <input type="button" class="botao" value="&#177;" onclick="negate()"> <!-- mais/menos -->
-        <input type="button" class="botao" value="0" onclick="botaoNum(value)">
-        <input type="button" class="botao" value="." onclick="botaoNum(value)">
-        <input type="button" class="botao igual" value="=" onclick="calcula()">
-        <br>
-    </form>
+    <div class="container">
+        <form id="calculadora">
+            <div class="key-display">
+            <input type="text" id="display" value="0">
+            </div>
+            <div class="keyboard">
+                <input type="button" class="botao raiz" value="&#8730;" onclick="botaoRaiz(value)"> <!-- raiz -->
+                <input type="button" class="botao limpar" value="C" onclick="resetaTudo()">
+                <input type="button" class="botao apagar" value="&#9003;" onclick="apaga()"> <!-- apagar -->
+                <input type="button" class="botao div" value="&#247;" onclick="botaoOperacao('/')"> <!-- divisão -->
+                <br>
+                <input type="button" class="botao" value="7" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="8" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="9" onclick="botaoNum(value)">
+                <input type="button" class="botao mult" value="x" onclick="botaoOperacao(value)">
+                <br>
+                <input type="button" class="botao" value="4" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="5" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="6" onclick="botaoNum(value)">
+                <input type="button" class="botao menos" value="-" onclick="botaoOperacao(value)">
+                <br>
+                <input type="button" class="botao" value="1" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="2" onclick="botaoNum(value)">
+                <input type="button" class="botao" value="3" onclick="botaoNum(value)">
+                <input type="button" class="botao mais" value="+" onclick="botaoOperacao(value)">
+                
+                <br>
+                <input type="button" class="botao maismenos" value="&#177;" onclick="negate()"> <!-- mais/menos -->
+                <input type="button" class="botao" value="0" onclick="botaoNum(value)">
+                <input type="button" class="botao ponto" value="." onclick="botaoNum(value)">
+                <input type="button" class="botao igual" value="=" onclick="calcula()">
+            </div>
+        </form>
+    </div>
 
 </body>
 <script Language="JavaScript" src="./calculadora-js.js"></script>

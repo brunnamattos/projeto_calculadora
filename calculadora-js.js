@@ -1,4 +1,5 @@
 var acumulador = "";
+var hist = "";
 var numero = "";
 var calc = [undefined,undefined,undefined];
 var resultado = undefined;
@@ -11,6 +12,12 @@ function visor (conteudo) {
     tela.value = acumulador;
 }
 
+/*function historico (conteudo) {
+    hist = hist + conteudo;
+    var tela = document.getElementById('displayHistorico');
+    tela.value = conteudo;
+}*/
+
 function botaoNum (num) {
     numero = numero.concat(num);
     visor(num);
@@ -20,22 +27,45 @@ function botaoOperacao (op) {
     if (calc[1] == undefined) {
         calc[0] = numero;
         calc[1] = op;
-        visor(op);
+        //historico(calc[0]);
+       // historico(op);
+       // resetaDisplay();
+       visor (op);
         numero = "";
     }
     else if (calc[1] != undefined) {
         calc[1] = op;
-        visor(op);
+       // historico(calc[0]);
+        //historico(op);
+       // resetaDisplay();
+       visor (op);
         numero = "";
     }
 }
 
 function botaoRaiz () {
-    if (numero != "" && numero > 0)
-        numero = Math.sqrt(numero);
+    if (numero != "" && numero > 0) {
+        numero = Math.sqrt(numero).toString();
+        acumulador = numero
 
         var tela = document.getElementById('display');
         tela.value = numero;
+    }
+    else {
+        var tela = document.getElementById('display');
+        tela.value = "ENTRADA INVÁLIDA!";
+
+    }
+}
+
+function apaga () {
+    numero = numero.slice(0, -1);
+    resetaDisplay();
+    visor(numero);
+    if (acumulador == "") {
+        var tela = document.getElementById('display');
+        tela.value = "0";
+    }
 }
 
 function resetaMemoria () {
@@ -49,13 +79,21 @@ function resetaDisplay () {
     acumulador = "";
     
     var tela = document.getElementById('display');
-    tela.value = acumulador;
+    tela.value = "0";
 }
+
+/*function resetaHistorico () {
+    hist = "";
+    
+    var tela = document.getElementById('displayHistorico');
+    tela.value = "";
+}*/
 
 function resetaTudo () {
     manterResultado = undefined;
     resetaDisplay();
     resetaMemoria();
+   // resetaHistorico();
 }
 
 function negate () {
@@ -83,7 +121,9 @@ function calcula () {
                 break;
         }
         manterResultado = resultado;
+        hist = calc.join('');
         resetaDisplay();
+       // historico(hist);
         visor(resultado);
         resetaMemoria();
         numero = manterResultado.toString();
